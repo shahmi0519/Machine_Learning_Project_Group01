@@ -1,0 +1,122 @@
+🗣️ Full Presentation Script (12 minutes)
+
+
+---
+
+1. Introduction (Page 1–2) – ~1.5 min
+
+“Good morning, everyone.
+Today, I will be presenting our project titled Consumer Review Analysis on Clothing Products.
+
+In the modern retail industry, consumer reviews play a crucial role in purchasing decisions. Customers rely heavily on online reviews to judge the quality, durability, and design of products.
+
+Our project focuses on analyzing these consumer reviews using machine learning techniques. We used a dataset collected from Kaggle, which contains detailed customer insights such as review titles, full review texts, ratings, clothing categories, and other product features.
+
+The main objective of this project is to develop a supervised classification model that predicts customer ratings based on reviews. To achieve this, we used two machine learning algorithms: Support Vector Machines, or SVM, and K-Nearest Neighbors, or KNN.
+
+This work not only contributes to sentiment analysis in the fashion industry but also demonstrates how machine learning can help retailers better understand customer preferences and improve their product offerings.”
+
+
+---
+
+2. Literature Survey (Page 3) – ~1 min
+
+“Next, let’s look at the literature survey.
+Sentiment analysis, also known as opinion mining, is widely used to identify whether reviews are positive, neutral, or negative.
+
+Previous studies have shown that SVM performs well for high-dimensional text data, while KNN is simple and effective in finding similarities between reviews.
+
+However, most research has focused only on the review text. Our project addresses this gap by incorporating both text features and product features, such as material and durability, to improve prediction accuracy.
+
+This approach makes our work more relevant for fashion retailers, since product details combined with reviews give a more complete picture of customer satisfaction.”
+
+
+---
+
+3. Dataset & Exploratory Analysis (Pages 4–6) – ~2 min
+
+“Now, moving on to the dataset.
+
+We collected around 45,000 consumer reviews of clothing products. Each entry contains the review text, a rating between one and five, and the clothing category.
+
+After analyzing correlations, we found that product attributes like material, color, and durability had very low correlation with ratings. So, we dropped them and focused mainly on the review text and customer rating.
+
+The ratings were then simplified into three categories:
+
+Positive, when the rating is above three.
+
+Neutral, when the rating is equal to three.
+
+Negative, when the rating is below two.
+
+
+When we looked at the distribution, most reviews were positive, followed by fewer neutral and negative reviews. This imbalance is important because it influences the accuracy of our models.”
+
+
+---
+
+4. Data Preprocessing (Pages 6–9) – ~2 min
+
+“Before training the models, we carried out several data preprocessing steps.
+
+First, we converted all text to lowercase and removed punctuation.
+Second, we removed numbers, brackets, and unnecessary symbols.
+Third, we tokenized the sentences into individual words and removed common stopwords like ‘the’, ‘is’, and ‘and’. But we kept important words like ‘not’, since they affect meaning.
+Finally, we applied lemmatization, which converts words into their root form. For example, ‘dresses’ becomes ‘dress’.
+
+This cleaned text was then converted into numerical form using TF-IDF vectorization. This technique assigns weights to words based on how important they are in the document.
+
+Through these steps, we transformed unstructured text reviews into structured numerical data, ready for model training.”
+
+
+---
+
+5. Model Implementation (Pages 10–12) – ~2.5 min
+
+“Now, let’s talk about model implementation.
+
+We trained two machine learning models: SVM and KNN.
+
+First, the SVM model with a linear kernel achieved strong performance. It gave an accuracy of about 82.6 percent, an F1 score of 81.6 percent, and a precision of 81.1 percent. It performed especially well on positive reviews, although performance for neutral and negative classes was slightly lower because of data imbalance.
+
+Next, the KNN model was tested with different values of K. After experimentation, K equals 5 gave the best results. However, the accuracy was lower, around 74.3 percent, with an F1 score of 66.7 percent and precision of 66 percent.
+
+Overall, SVM clearly outperformed KNN in all metrics, showing that it is more suitable for text-based sentiment analysis.”
+
+
+---
+
+6. Evaluation & Comparison (Page 13) – ~1.5 min
+
+“To evaluate and compare both models, we plotted accuracy, F1 score, and precision side by side.
+
+The results confirmed that SVM consistently achieved better performance than KNN. This is mainly because SVM handles high-dimensional and sparse data, like TF-IDF vectors, more effectively than KNN.
+
+Another key observation is that positive reviews were detected with high precision, while neutral and negative reviews were more challenging to classify due to the smaller sample size. This imbalance remains an area for improvement.”
+
+
+---
+
+7. Predictions with New Data (Page 14) – ~0.5 min
+
+“We also tested the models with new input.
+For example, the review ‘I like this dress’ was correctly predicted as Positive by both SVM and KNN.
+
+This shows that the models can be applied to real-world data and give meaningful predictions.”
+
+
+---
+
+8. Discussion & Conclusion (Last Page) – ~1.5 min
+
+“Finally, let’s move to the discussion and conclusion.
+
+Our study showed that SVM achieved high accuracy, above 82 percent, and is well suited for sentiment analysis of clothing reviews. KNN, on the other hand, performed less effectively because of the high-dimensional feature space.
+
+This project demonstrates how machine learning can provide retailers with valuable insights into customer opinions. By analyzing reviews, retailers can improve their products and enhance customer satisfaction.
+
+For future work, we suggest exploring deep learning models such as LSTM or BERT, which are known to perform even better on text data. We also plan to address the imbalance problem by applying techniques like oversampling or using balanced datasets.
+
+In conclusion, our project highlights the power of machine learning in understanding consumer behavior and contributes to better decision-making in the fashion retail industry.
+
+Thank you.”
